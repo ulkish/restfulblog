@@ -6,9 +6,10 @@ expressSanitizer = require("express-sanitizer"),
 app              = express();
 
 // APP CONFIG
-mongoose.connect("mongodb://localhost/restful_blog_app", {
-    useMongoClient: true
-});
+mongoose.connect("mongodb://ulkish:jack@ds231588.mlab.com:31588/restfulblog");
+// , {
+//     useMongoClient: true
+// });
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
