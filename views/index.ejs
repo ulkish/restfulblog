@@ -1,0 +1,23 @@
+<% include ./partials/header %>
+
+
+
+<div id="indexx" class="ui centered huge header">RESTful Blog App</div>
+
+<% blogs.reverse().forEach(function(blog){ %>
+    <div id="post" class="ui raised padded text container segment">
+        <a class="ui huge header" href="/blogs/<%= blog._id %>"><%= blog.title %></a>
+        <img class="ui centered rounded image" src="<%=blog.image%>">
+        <span><%=blog.created.toDateString()%></span>
+        <p><%-blog.body.substring(0, 200)%>...</p>
+        <a class="ui button" href="/blogs/<%= blog._id %>">Read more</a>
+    </div>
+
+
+
+
+
+<% }) %>
+
+
+<% include ./partials/footer %>
